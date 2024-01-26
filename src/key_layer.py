@@ -44,41 +44,37 @@ def bind_listener():
     listener.start()
 
 
-def initialize(char) :
+def initialize(char):
     global initialized
-    if (char == ';' and len(key_tab) == 0) or initialized :
+    if (char == ';' and len(key_tab) == 0) or initialized:
         initialized = True
         return True
-    
+
     return False
 
 
-def append_to_keytab(char) :
+def append_to_keytab(char):
     global key_tab, initialized
-    if char != ';' :
-        if len(key_tab) < MAX_ENTITIES_LENGTH :
+    if char != ';':
+        if len(key_tab) < MAX_ENTITIES_LENGTH:
             key_tab.append(char)
 
             return True
-        else :
+        else:
             key_tab = []
             initialized = False
 
     return False
 
 
-''' map entity to corresponding accent.
- If entity_candidate is found in entites dictionnary keys 
- then stop listener and delete entity charactere and
- replace it by corresponding accent'''
-
-def mapper(entity_candidate) :
+# map an HTML entity to its corresponding accent
+def mapper(entity_candidate):
     global key_tab, initialized
-    
+
     if entity_candidate in html_entities_mapping:
         listener.stop()
 
-        for i in range( len(entity_candidate) + 2 ): # + 2 beacuse we also delete the `;` charactere
+        for i in range(len(entity_candidate) + 2):  # + 2 because we also delete the `;` character
             keyController.press(Key.backspace)
             keyController.release(Key.backspace)
 
@@ -86,18 +82,18 @@ def mapper(entity_candidate) :
         key_tab = []
         initialized = False
         bind_listener()
-    else :
+    else:
         key_tab = []
-        if entity_candidate != '' : # because the fisrt time entity_candidate will be equal to ''
+        if entity_candidate != '':  # because the first time entity_candidate will equal to ''
             initialized = False
 
 
 def on_release(key: keyboard.Key | keyboard.KeyCode):
     global key_tab, initialized
-    
+
     try:
         has_been_initialized = initialize(key.char)
-        if has_been_initialized :
+        if has_been_initialized:
             has_append = append_to_keytab(key.char)
 
             if not has_append:
@@ -108,7 +104,6 @@ def on_release(key: keyboard.Key | keyboard.KeyCode):
         if key == keyboard.Key.space or key == keyboard.Key.enter:
             key_tab = []
             initialized = False
-
 
 
 def start_mapping():
