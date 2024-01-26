@@ -1,5 +1,7 @@
 import flet as ft
+import key_layer
 
+activated = False
 
 def html_accent_mapper_app(page: ft.Page):
     page.window_min_width       = page.window_max_width =  905
@@ -17,7 +19,7 @@ def html_accent_mapper_app(page: ft.Page):
         
     )
 
-    activaed_info_text = ft.Container(
+    activated_info_text = ft.Container(
         ft.Text("Deactivated", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
         alignment=ft.alignment.center,
         width=500,
@@ -34,7 +36,7 @@ def html_accent_mapper_app(page: ft.Page):
     )
 
     switch_anim = ft.AnimatedSwitcher(
-        content=activaed_info_text,
+        content=activated_info_text,
         transition=ft.AnimatedSwitcherTransition.SCALE,
         duration=90,
         reverse_duration=90,
@@ -42,13 +44,26 @@ def html_accent_mapper_app(page: ft.Page):
         switch_out_curve=ft.AnimationCurve.EASE_IN
     )
 
-    def animate(e):
-        if(switch_anim.content == activaed_info_text):
+
+    def animate():
+        if(switch_anim.content == activated_info_text):
             switch_anim.content = deactivated_info_text
         else:
-            switch_anim.content = activaed_info_text
+            switch_anim.content = activated_info_text
 
         switch_anim.update()
+
+
+    def toggle_startup(e):
+        global activated
+        animate()
+        if activated == False :
+            key_layer.start_mapping()
+        else :
+            key_layer.stop_mapping()
+        
+        activated = not activated
+
 
     page.add(
         switch_anim,
@@ -56,7 +71,7 @@ def html_accent_mapper_app(page: ft.Page):
             "Activate / Deactivate",
             width=400,
             height=80,
-            on_click=animate,
+            on_click=toggle_startup,
         )
     )
 
