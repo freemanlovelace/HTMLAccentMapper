@@ -34,7 +34,7 @@ html_entities_mapping = {
     "ouml": "ö",
     "uuml": "ü",
     "ccedil": "ç",
-    "nbsp": "Non-breaking space",
+    "nbsp": "\t",
 }
 
 
