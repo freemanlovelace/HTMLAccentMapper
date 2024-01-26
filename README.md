@@ -1,2 +1,0 @@
-# HTMLAccentMapper
-HTMLAccentMapper is an open-source project designed to enhance the usability of QWERTY keyboards by seamlessly integrating HTML accent encoding patterns. This tool allows users to effortlessly input accented characters in their text by recognizing and mapping HTML accent entities. Whether you're a multilingual writer, developer, or simply looking to improve your keyboard experience, HTMLAccentMapper simplifies the process of accent input.
