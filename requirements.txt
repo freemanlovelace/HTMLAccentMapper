@@ -1,1 +1,2 @@
 pynput==1.7.6
+pyinstaller==6.3.0
