@@ -147,5 +147,5 @@ If Space or Enter key is pressed, then key_tab is reinitialized.
 </table>
 
 # Contributing
-Open an Issue then feel free to submit pull request
+If you want to contribute open an issue then feel free to submit pull request
 
