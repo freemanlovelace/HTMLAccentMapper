@@ -2,7 +2,7 @@
 HTMLAccentMapper is a Python script designed to improve the usability of QWERTY keyboards by seamlessly integrating HTML accent encoding patterns. This tool simplifies the input of accented characters by recognizing and mapping HTML accent entities. Whether you're a multilingual writer, developer, or someone looking to enhance their keyboard experience, HTMLAccentMapper streamlines the process of accent input.
 the script use the [pynut python library](https://pynput.readthedocs.io/en/latest/)
 
-![test screenshot](/screenshot/mapperTest.gif)
+![test screenshot](/screenshot/test.gif)
 
 ## Install
 To test the script on other plateform, launch the provided gui.py. Follow these steps:
