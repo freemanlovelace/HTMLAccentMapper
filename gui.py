@@ -2,7 +2,6 @@ import tkinter as tk
 import mapper
 
 
-
 root = tk.Tk()
 root.geometry('400x100')
 root.resizable(False, False)
@@ -11,7 +10,7 @@ root.title("HTMLAccentMapper")
 radio_var = tk.StringVar()
 
 
-activated_radio = tk.Radiobutton(root, text="Activate",variable=radio_var, 
+activated_radio = tk.Radiobutton(root, text="Activate", variable=radio_var,
                                  value="Activate", command=mapper.start_mapping)
 
 deactivated_radio = tk.Radiobutton(root, text="Deactivate", variable=radio_var, 

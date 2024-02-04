@@ -1,7 +1,7 @@
 from pynput import keyboard
 
 MAX_ENTITIES_LENGTH = 6
-listener = None
+listener: keyboard.Listener | None = None
 key_tab = []
 keyController = keyboard.Controller()
 Key = keyboard.Key
@@ -112,9 +112,6 @@ def start_mapping():
 
 def stop_mapping():
     global key_tab, initialized
-    try:
-        listener.stop()
-        key_tab = []
-        initialized = False
-    except Exception:
-        print('Exception while stoping listener')
+    listener.stop()
+    key_tab = []
+    initialized = False
