@@ -24,7 +24,7 @@ pip install -r requirements.txt
 python3 gui.py (Use python instead of python3 on Windows)
 ```
 
-You an build the app for your platform using pyInstaller : `pyinstaller gui.py`
+You can build the app for your platform using pyInstaller : `pyinstaller gui.py`
   
 ## Usage
 
