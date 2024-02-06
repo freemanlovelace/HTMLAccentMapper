@@ -8,8 +8,8 @@ the script use the [pynut python library](https://pynput.readthedocs.io/en/lates
 To test the script on other plateform, launch the provided gui.py. Follow these steps:
 
 ```
- Clone this repository
-git clone
+# Clone this repository
+git clone https://github.com/freemanlovelace/HTMLAccentMapper.git
 
 # create a virtual environment
 python3 -m venv ./HTMLAccentMapperEnv
