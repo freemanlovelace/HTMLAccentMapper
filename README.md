@@ -7,15 +7,20 @@ the script use the [pynut python library](https://pynput.readthedocs.io/en/lates
 ## Install
 To test the script on other plateform, launch the provided gui.py. Follow these steps:
 
-1. Clone this repository
-2. create a virtual environment
-3. activate the virtual environment
-4. Install requirements then Launch gui.py :  
-
 ```
+ Clone this repository
+git clone
+
+# create a virtual environment
 python3 -m venv ./HTMLAccentMapperEnv
+
+# activate the virtual environment
 source ./HTMLAccentMapperEnv/bin/activate (on windows : HTMLAccentMapperEnv\Scripts\activate)
+
+# Install requirements
 pip install -r requirements.txt
+
+# Launch gui.py
 python3 gui.py (Use python instead of python3 on Windows)
 ```
 
